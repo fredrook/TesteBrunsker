@@ -1,0 +1,138 @@
+<div class="card card-body">
+  <div class="row">
+    <div class="col-md-8">
+      <h4 class="font-weight-bold py-1 mb-2">
+        <span class="text-muted font-weight-light">Imobiliária</span> Brunsker
+      </h4>
+    </div>
+  </div>
+
+  <div class="card card-body" src="../../../assets/LogoTIpoImobiliaria.png">
+    <form [formGroup]="crudFormPesquisarImoveis">
+         <div class="row col-xl-12">
+        <div class="col-md-1">
+          <div class="form-group">
+            <label class="control-label">Código</label>
+            <input
+              type="text"
+              class="form-control"
+              id="idImovel"
+              formControlName="idImovel"
+            />
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="form-group">
+            <label class="control-label">Nome do Imóvel</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nomeImovel"
+              formControlName="nomeImovel"
+            />
+          </div>
+        </div>
+
+        <div class="row col">
+          <div class="input-group">
+            <div class="text-left" style="margin-left: 10px">
+              <button
+                class="btn btn-primary"
+                type="button"
+                (click)="listar()"
+                style="margin-top: 29px"
+              >
+                <span class="fa fa-search"></span>
+                Pesquisar
+              </button>
+              <button
+                class="btn btn-secondary"
+                type="button"
+                (click)="limpar()"
+                style="margin-top: 29px"
+              >
+                <span class="fa fa-eraser"></span>
+                Limpar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="card card-body">
+    <div class="row">
+      <div class="col-md-12 table-responsive">
+        <table
+          id="dtBasicExample"
+          class="table table-striped table-bordered"
+          cellspacing="0"
+          width="100%"
+        >
+          <thead>
+            <tr>
+              <th style="width: 2%">Código</th>
+              <th style="width: 79%">Nome</th>
+              <th style="width: 7%">Situação</th>
+              <th style="width: 12%">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of clinicas">
+              <td>{{ item.idClinica }}</td>
+              <td>{{ item.nome }}</td>
+              <td>
+                <a
+                  class="badge badge-success"
+                  style="color: white; width: 100%"
+                  *ngIf="item.situacao == 'Ativo'"
+                  >Ativo</a
+                >
+                <a
+                  class="badge badge-danger"
+                  style="color: white; width: 100%"
+                  *ngIf="item.situacao == 'Excluido'"
+                  >Excluído</a
+                >
+              </td>
+              <td class="text-center">
+                <button
+                  style="width: 35px"
+                  class="btn btn-sm btn-primary"
+                  type="button"
+                  ngbTooltip="Editar"
+                  (click)="crud(item.idClinica)"
+                  *ngIf="item.situacao == 'Ativo'"
+                >
+                  <span class="fa fa-edit"></span>
+                </button>
+                <button
+                  style="width: 35px"
+                  class="btn btn-sm btn-danger"
+                  type="button"
+                  ngbTooltip="Excluir"
+                  (click)="excluir(item.idClinica)"
+                  *ngIf="item.situacao == 'Ativo'"
+                >
+                  <span class="fa fa-trash"></span>
+                </button>
+                <button
+                  style="width: 35px"
+                  class="btn btn-sm"
+                  style="background: gold; color: white"
+                  type="button"
+                  ngbTooltip="Adicionar Logotipo"
+                  (click)="crudUploadImg(item.idClinica)"
+                  *ngIf="item.situacao == 'Ativo'"
+                >
+                  <span class="ion-md-images"></span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

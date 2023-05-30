@@ -1,0 +1,15 @@
+<div class="card" style="width: 18rem">
+  <h3 class="card-header">{{ codigo }}</h3>
+  <img
+    class="card-img-top"
+    src="../../../assets/img/houseimg.jpg"
+    alt="Foto casa"
+  />
+  <div class="card-body">
+    <p>Cidade: {{ cidade }} - Bairro: {{ bairro }}</p>
+    <p>{{ quartos }} quartos | {{ banheiros }} banheiros | {{ vaga }} vaga</p>
+    <p>Cep: {{ cep }}</p>
+    <p>Valor: {{ valor }}:</p>
+    <button class="btn btn-danger" (click)="deletarImovel()">Deletar</button>
+  </div>
+</div>

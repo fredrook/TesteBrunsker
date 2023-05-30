@@ -1,0 +1,140 @@
+<div class="container">
+  <div class="row">
+    <div class="input-group mb-3 col-6">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Digite o código do imóvel"
+        aria-label="Digite o código do imóvel"
+        aria-describedby="basic-addon2"
+        id="imovelID"
+        maxlength="8"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="acionar()"
+        >
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="col-6" />
+  <form [formGroup]="myEditform">
+    <div class="row">
+      <div class="form-group col-2">
+        <label for="">Cidade</label>
+        <input
+          formControlName="cidade"
+          class="form-control form-control-sm"
+          type="text"
+          id=""
+          placeholder="xxxxxx"
+          [value]="cidade"
+        />
+        <small
+          style="color: red"
+          *ngIf="
+            myEditform.controls['cidade'].invalid &&
+            myEditform.controls['cidade'].pristine
+          "
+          >*Obrigatório</small
+        >
+      </div>
+
+      <div class="form-group col-2">
+        <label for="">Bairro</label>
+        <input
+          formControlName="bairro"
+          class="form-control form-control-sm"
+          type="text"
+          id="bairro"
+          placeholder="xxxxxx"
+          [value]="logradouro"
+        />
+        <small
+          style="color: red"
+          *ngIf="
+            myEditform.controls['bairro'].invalid;
+            $$: myEditform.controls['bairro'].pristine
+          "
+          >*Obrigatório</small
+        >
+      </div>
+      <div class="form-group col-2">
+        <label for="">Cep</label>
+        <input
+          formControlName="code"
+          class="form-control form-control-sm"
+          type="text"
+          id=""
+          placeholder="xxxxxx"
+          [value]="code"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-2">
+        <label for=""> quartos </label>
+        <input
+          formControlName="quartos"
+          class="form-control form-control-sm"
+          type="text"
+          id=""
+          placeholder="xxxxxx"
+          [value]="quartos"
+        />
+      </div>
+      <div class="form-group col-2">
+        <label for="">Banheiros</label>
+        <input
+          formControlName="banheiros"
+          class="form-control form-control-sm"
+          type="text"
+          id=""
+          placeholder="xxxxxx"
+          [value]="banheiros"
+        />
+      </div>
+      <div class="form-group col-2">
+        <label for="">Garagem</label>
+        <input
+          formControlName="garagem"
+          class="form-control form-control-sm"
+          type="text"
+          id=""
+          placeholder="xxxxxx"
+          [value]="garagem"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="">Valor do Imóvel</label>
+        <input
+          formControlName="valor"
+          class="form-control form-control-sm"
+          type="text"
+          id=""
+          placeholder="xxxxxx"
+          [value]="valor"
+        />
+        <small
+          style="color: red"
+          *ngIf="
+            myEditform.controls['valor'].invalid &&
+            myEditform.controls['valor'].pristine
+          "
+          >*Obrigatório</small
+        >
+      </div>
+    </div>
+
+    <button class="btn btn-primary" (click)="chamaAtualizar()">
+      Atualizar
+    </button>
+  </form>
+</div>
