@@ -1,27 +1,24 @@
-# BrunskerWeb
+**Realização Teste Full Stack Brunsker**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+Objetivo Back End: Realizar a criação de um CRUD, onde irei ter 3 entities ( usuario, imovel, tabelaPivo), gerar as rotas no Swagger.
 
-## Development server
+- Configurações;
+- Configurar Swagger;
+- Criar toda baseModel de Auditoria;
+- Criar toda base Usuario;
+- Criar toda base Imóvel;
+- Criar toda base TabelaPivo;
+- Criar CRUD Controller Usuario;
+- Criar CRUD Imovel;
+- Criar Login;
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Criar Query para criação do DBO.
 
-## Code scaffolding
+Objetivo Front End: Realizar a criação de um Layout com 3 Páginas, ( Home, CadastroImóvel, Corretores ):
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Página Home: Search ( Campos de busca: código"idImovel", cidade e bairro ) + Botoneira ( Pesquisar , Limpar );
+- Página Home: Listar todos 10 primeiros imóveis de cara ao entrar ( Campos: Código, Cidade, Bairro, Situação, Ações ) / Botoneira Ações ( Botão com Icone de Lupa que abre modal )
+- Modal CardImovel: Mostra fotos do imovel, Dados do mesmo e botoneira com opções, Alugar, Contatar Corretor.
+- Página Cadastro Imóvel: Campo de busca por CPF + Google Maps / Imputs para preenchimento Cadastro do Imóvel;
+- Página Corretor: Efetuar Login para o mesmo + Cadastrar Novos usuarios ( Tipo Locador, Corretor, Locatario )
+- Página DadosEstatiticos: Criar página que trará os dadas do corretor logado sobre as Vendas, Locações e demais leads do mês atual.

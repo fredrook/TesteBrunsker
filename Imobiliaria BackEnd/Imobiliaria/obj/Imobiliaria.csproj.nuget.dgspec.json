@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FreDRook\\Desktop\\Imobiliaria\\Imobiliaria\\Imobiliaria\\Imobiliaria.csproj": {}
+    "C:\\Users\\FreDRook\\Desktop\\TesteBrunsker\\Imobiliaria BackEnd\\Imobiliaria\\Imobiliaria.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FreDRook\\Desktop\\Imobiliaria\\Imobiliaria\\Imobiliaria\\Imobiliaria.csproj": {
+    "C:\\Users\\FreDRook\\Desktop\\TesteBrunsker\\Imobiliaria BackEnd\\Imobiliaria\\Imobiliaria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FreDRook\\Desktop\\Imobiliaria\\Imobiliaria\\Imobiliaria\\Imobiliaria.csproj",
+        "projectUniqueName": "C:\\Users\\FreDRook\\Desktop\\TesteBrunsker\\Imobiliaria BackEnd\\Imobiliaria\\Imobiliaria.csproj",
         "projectName": "Imobiliaria",
-        "projectPath": "C:\\Users\\FreDRook\\Desktop\\Imobiliaria\\Imobiliaria\\Imobiliaria\\Imobiliaria.csproj",
+        "projectPath": "C:\\Users\\FreDRook\\Desktop\\TesteBrunsker\\Imobiliaria BackEnd\\Imobiliaria\\Imobiliaria.csproj",
         "packagesPath": "C:\\Users\\FreDRook\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FreDRook\\Desktop\\Imobiliaria\\Imobiliaria\\Imobiliaria\\obj\\",
+        "outputPath": "C:\\Users\\FreDRook\\Desktop\\TesteBrunsker\\Imobiliaria BackEnd\\Imobiliaria\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

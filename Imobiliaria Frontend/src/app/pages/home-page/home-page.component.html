@@ -2,17 +2,20 @@
   <div class="row">
     <div class="col-md-8">
       <h4 class="font-weight-bold py-1 mb-2">
-        <span class="text-muted font-weight-light">Imobiliária</span> Brunsker
+        <span class="text-muted font-weight-light"
+          >Faça hoje seu sonho virar realidade!</span
+        >
+        Pesquise seu Imóvel
       </h4>
     </div>
   </div>
 
-  <div class="card card-body" src="../../../assets/LogoTIpoImobiliaria.png">
-    <form [formGroup]="crudFormPesquisarImoveis">
-         <div class="row col-xl-12">
-        <div class="col-md-1">
+  <div class="card card-body">
+    <form [formGroup]="crudFormBuscarImovel">
+      <div class="row col-xl-12">
+        <div class="col-md-2">
           <div class="form-group">
-            <label class="control-label">Código</label>
+            <label class="control-label">Código do Imóvel</label>
             <input
               type="text"
               class="form-control"
@@ -21,35 +24,46 @@
             />
           </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
           <div class="form-group">
-            <label class="control-label">Nome do Imóvel</label>
+            <label class="control-label">Cidade</label>
             <input
               type="text"
               class="form-control"
-              id="nomeImovel"
-              formControlName="nomeImovel"
+              id="cidade"
+              formControlName="cidade"
+            />
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label class="control-label">Bairro</label>
+            <input
+              type="text"
+              class="form-control"
+              id="bairro"
+              formControlName="bairro"
             />
           </div>
         </div>
 
         <div class="row col">
           <div class="input-group">
-            <div class="text-left" style="margin-left: 10px">
+            <div class="text-left" style="margin-left: 10px; margin-top: 4px">
               <button
+                style="margin-top: 29px"
                 class="btn btn-primary"
                 type="button"
                 (click)="listar()"
-                style="margin-top: 29px"
               >
                 <span class="fa fa-search"></span>
                 Pesquisar
               </button>
               <button
+                style="margin-top: 29px; margin-left: 15px"
                 class="btn btn-secondary"
                 type="button"
                 (click)="limpar()"
-                style="margin-top: 29px"
               >
                 <span class="fa fa-eraser"></span>
                 Limpar
@@ -63,70 +77,47 @@
 
   <div class="card card-body">
     <div class="row">
-      <div class="col-md-12 table-responsive">
+      <div class="col-md-12">
         <table
           id="dtBasicExample"
-          class="table table-striped table-bordered"
+          class="table table-striped table-bordered table-responsive"
           cellspacing="0"
           width="100%"
         >
           <thead>
             <tr>
               <th style="width: 2%">Código</th>
-              <th style="width: 79%">Nome</th>
-              <th style="width: 7%">Situação</th>
-              <th style="width: 12%">Ações</th>
+              <th style="width: 35%">Cidade</th>
+              <th style="width: 35%">Bairro</th>
+              <th class="text-center" style="width: 5%">Situação</th>
+              <th class="text-center" style="width: 6%">Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let item of clinicas">
-              <td>{{ item.idClinica }}</td>
-              <td>{{ item.nome }}</td>
+            <tr>
+              <!-- *ngFor="let item of imoveis" -->
+              <td>XXX<!-- {{ item.idCid }} --></td>
+              <td>XXX<!-- {{ item.codigoCid }} --></td>
+              <td>XXX<!-- {{ item.nome }} --></td>
               <td>
-                <a
-                  class="badge badge-success"
-                  style="color: white; width: 100%"
-                  *ngIf="item.situacao == 'Ativo'"
-                  >Ativo</a
+                <a class="badge badge-success" style="color: white; width: 100%"
+                  >Disponível</a
+                ><!-- *ngIf="item.situacao == 'Disponível'" -->
+                <a class="badge badge-danger" style="color: white; width: 100%"
+                  >Alugado</a
                 >
-                <a
-                  class="badge badge-danger"
-                  style="color: white; width: 100%"
-                  *ngIf="item.situacao == 'Excluido'"
-                  >Excluído</a
-                >
+                <!-- *ngIf="item.situacao == 'Alugado'" -->
               </td>
               <td class="text-center">
                 <button
                   style="width: 35px"
-                  class="btn btn-sm btn-primary"
-                  type="button"
-                  ngbTooltip="Editar"
-                  (click)="crud(item.idClinica)"
-                  *ngIf="item.situacao == 'Ativo'"
-                >
-                  <span class="fa fa-edit"></span>
-                </button>
-                <button
-                  style="width: 35px"
                   class="btn btn-sm btn-danger"
                   type="button"
-                  ngbTooltip="Excluir"
-                  (click)="excluir(item.idClinica)"
-                  *ngIf="item.situacao == 'Ativo'"
+                  ngbTooltip="Alugar"
                 >
-                  <span class="fa fa-trash"></span>
-                </button>
-                <button
-                  style="width: 35px"
-                  class="btn btn-sm"
-                  style="background: gold; color: white"
-                  type="button"
-                  ngbTooltip="Adicionar Logotipo"
-                  (click)="crudUploadImg(item.idClinica)"
-                  *ngIf="item.situacao == 'Ativo'"
-                >
-                  <span class="ion-md-images"></span>
+                  <!-- (click)="Alugar(item.idImovel)" -->
+                  <!-- *ngIf="item.situacao == 'Para Locação'" -->
+                  <span class="fa fa-house"></span>
                 </button>
               </td>
             </tr>

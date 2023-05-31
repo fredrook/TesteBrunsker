@@ -1,32 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { DataService } from './data.service';
-import { environment } from '../../environments/environment';
+import { IImovel } from '../model/IImovel';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AnamneseService extends DataService {
-  baseUrl = environment.baseUrl;
-  
+export class ImovelService {
+  constructor(private http: HttpClient) {}
+
   salvar(data: any) {
-    return this.post<any>(`${this.baseUrl}api/anamnese/salvar`, data);
+    return this.http.post<any>(`api/Imovel/salvar`, data);
   }
 
-  listar(id: any) {
-    return this.get<any>(
-      `${this.baseUrl}api/anamnese/listar/?idPaciente=${id}`
+  listar(data: any) {
+    return this.http.get<any[]>(`api/Imovel/listar`, data);
+  }
+
+  obter(id: number) {
+    return this.http.get<any>(`api/Imovel/obter?idImovel=${id}`);
+  }
+
+  alterarValor(id: number, altVal: boolean) {
+    return this.http.get<any>(
+      `api/Imovel/alterarValor?idImovel=${id}&alterarValor=${altVal}`
     );
   }
 
-  obter(idPaciente: any, idAnamnese: any) {
-    return this.get<any>(
-      `${this.baseUrl}api/anamnese/obter/?idPaciente=${idPaciente}&idAnamense=${idAnamnese}`
-    );
-  }
-
-  excluir(idPaciente: any, idAnamnese: any) {
-    return this.get<any>(
-      `${this.baseUrl}api/anamnese/excluir/?idPaciente=${idPaciente}&idAnamnese=${idAnamnese}`
-    );
+  excluir(id: number) {
+    return this.http.delete(`api/Imovel/excluir?idImovel=${id}`);
   }
 }

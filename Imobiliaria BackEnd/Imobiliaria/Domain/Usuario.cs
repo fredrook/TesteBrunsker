@@ -34,11 +34,11 @@ namespace Imobiliaria.Models
 
             switch (tipoUsuario)
             {
-                case "Administrador":
+                case "Root": // responsavel pela gestão de usuários e imoveis 
                     this.Imovel = ValidaDomain.ValidaEntidadeNull("Imovel", imovel);
                     break;
 
-                case "Locatário":
+                case "Administrador":
                     this.Imovel = ValidaDomain.ValidaEntidadeNull("Imovel", imovel);
                     break;
 
@@ -46,12 +46,15 @@ namespace Imobiliaria.Models
                     this.Imovel = ValidaDomain.ValidaEntidadeNull("Imovel", imovel);
                     break;
 
+                case "Corretor":
+                    this.Imovel = ValidaDomain.ValidaEntidadeNull("Imovel", imovel);
+                    break;
 
                 case "Locador":
                     this.Imovel = ValidaDomain.ValidaEntidadeNull("Imovel", imovel);
                     break;
 
-                case "Root": // responsavel pela gestão de usuários e imoveis 
+                case "Locatário":
                     this.Imovel = ValidaDomain.ValidaEntidadeNull("Imovel", imovel);
                     break;
 

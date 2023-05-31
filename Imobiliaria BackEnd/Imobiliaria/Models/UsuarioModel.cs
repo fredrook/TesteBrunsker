@@ -13,7 +13,6 @@ namespace Imobiliaria.Models
         public string Email { get; set; }
         public string Senha { get; set; }
         public string TipoUsuario { get; set; }
-        public bool VisualizarProntuario { get; set; }
         public string Situacao { get; set; }
 
         public int? IdImovel { get; set; }
